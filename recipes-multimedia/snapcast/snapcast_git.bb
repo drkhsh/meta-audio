@@ -10,7 +10,7 @@ DEPENDS += " \
     libvorbis \
 "
 
-PV = "0.25.0"
+PV = "0.28.0"
 S = "${WORKDIR}/git"
 
 SRC_URI = " \
