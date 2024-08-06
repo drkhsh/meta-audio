@@ -1,2 +1,3 @@
-# meta-snapcast
-Yocto layer that includes snapcast and some streaming services
+# meta-audio
+
+Yocto layer that includes music streaming services
