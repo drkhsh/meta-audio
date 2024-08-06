@@ -10,7 +10,7 @@ DEPENDS += " \
     openssl \
 "
 
-PV = "4.0-dev"
+PV = "4.3.4"
 S = "${WORKDIR}/git"
 
 SRC_URI = " \
