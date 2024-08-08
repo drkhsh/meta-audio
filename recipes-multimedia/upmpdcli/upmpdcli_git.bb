@@ -1,17 +1,28 @@
 DESCRIPTION = "An UPnP front-end to MPD, the Music Player Daemon."
 LICENSE = "GPL-2.0-only"
-LIC_FILES_CHKSUM = "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f"
+
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 SRCREV = "upmpdcli-v1.8.12"
-SRC_URI = "https://framagit.org/medoc92/upmpdcli;branch=master;protocol=https"
+SRC_URI = "git://framagit.org/medoc92/upmpdcli;branch=master;protocol=https"
 
-inherit autotools pkgconfig
+LIC_FILES_CHKSUM = "file://COPYING;md5=4fbd65380cdd255951079008b364516c"
+SRC_URI[sha256sum] = "a24388c3f238c2b21bfd265a1ed84c8001110efa69c309b22d7465402d8cca03"
+
+inherit meson pkgconfig systemd
 
 S = "${WORKDIR}/git"
 
-DEPENDS += " libupnp"
+DEPENDS += " libupnpp jsoncpp libmpdclient"
+RDEPENDS:${PN} += " libupnpp jsoncpp libmpdclient python3-core"
 
-do_configure:prepend(){
-    (cd ${S} && ${S}/autogen.sh)
+SYSTEMD_SERVICE:${PN} = "upmpdcli.service"
+SYSTEMD_AUTO_ENABLE:${PN} = "enable"
+
+do_install:append() {
+    install -d ${D}/${systemd_unitdir}/system
+    install -m 0644 ${S}/systemd/upmpdcli.service ${D}/${systemd_unitdir}/system
 }
+
+FILES:${PN} += " ${systemd_unitdir}/system/upmpdcli.service"
 
