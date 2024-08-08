@@ -1,33 +1,23 @@
-From 6150433026ed3e2f8b3c4cbf5fbf63c79b675a4a Mon Sep 17 00:00:00 2001
-From: drkhsh <me@drkhsh.at>
-Date: Fri, 8 Jul 2024 12:29:17 +0200
-Subject: [PATCH] Fix curses and iniparser autoconf
-
----
- config.c     |  2 +-
- configure.ac | 12 +++---------
- 2 files changed, 4 insertions(+), 10 deletions(-)
-
 diff --git a/config.c b/config.c
-index 42b9b80..791b1e5 100644
+index ac7358f..57ade17 100644
 --- a/config.c
 +++ b/config.c
 @@ -4,7 +4,7 @@
- #include "util.h"
- 
+
  #include <ctype.h>
+ #ifndef _MSC_VER
 -#include <iniparser.h>
 +#include <iniparser/iniparser.h>
+ #endif
  #include <math.h>
- 
- #ifdef SNDIO
+
 diff --git a/configure.ac b/configure.ac
-index 3c01867..146d3c9 100644
+index 5aeda60..bac4f72 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -232,14 +232,8 @@ AS_IF([test "x$enable_output_ncurses" != "xno"], [
+@@ -364,14 +364,8 @@ AS_IF([test "x$enable_output_ncurses" != "xno"], [
    )
- 
+
    AC_CHECK_LIB($curses_lib, initscr,
 -    if test "$CURSES_CONFIG" = "" ; then
 -      LIBS="$LIBS -l$curses_lib"
@@ -39,10 +29,10 @@ index 3c01867..146d3c9 100644
 -    fi
 +    LIBS="$LIBS -l$curses_lib"
 +    CPPFLAGS="$CPPFLAGS -DNCURSES"
- 
+
      AC_CHECK_HEADERS([curses.h], , AC_MSG_ERROR([missing curses.h header]))
      have_ncurses=yes,
-@@ -261,7 +255,7 @@ AC_CHECK_LIB(iniparser,iniparser_load, have_iniparser=yes, have_iniparser=no)
+@@ -426,7 +420,7 @@ AC_CHECK_LIB(iniparser,iniparser_load, have_iniparser=yes, have_iniparser=no)
      if [[ $have_iniparser = "yes" ]] ; then
      LIBS="$LIBS -liniparser"
        CPPFLAGS="$CPPFLAGS -I/usr/include/iniparser"
@@ -51,3 +41,4 @@ index 3c01867..146d3c9 100644
        [[dictionary* ini;
        const char *keys[3];
        iniparser_getseckeys(ini, "eq", keys);]])],
+
