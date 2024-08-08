@@ -1,27 +1,43 @@
 SUMMARY = "Snpcast"
 DESCRIPTION = "Snapcast is a multiroom client-server audio player"
-LICENSE = "GPLv3"
+LICENSE = "GPL-3.0-only"
 
 DEPENDS += " \
-    avahi \
     boost \
+    alsa-utils \
+    avahi \
     alsa-lib \
-    flac \
     libvorbis \
+    flac \
+    libopus \
+    expat \
+    soxr \
+"
+RDEPENDS:${PN} += " \
+    alsa-utils \
+    avahi \
+    alsa-lib \
+    libvorbis \
+    flac \
+    libopus \
+    expat \
+    soxr \
+    soxr-dev \
+    libpulse \
 "
 
 PV = "0.28.0"
 S = "${WORKDIR}/git"
 
 SRC_URI = " \
-    git://github.com/badaix/snapcast.git;protocol=https;tag=v${PV} \
+    git://github.com/badaix/snapcast.git;protocol=https;branch=develop;tag=v${PV} \
     file://snapclient.service \
     file://snapserver.service \
     file://snapserver.conf \
 "
 LIC_FILES_CHKSUM = "file://../git/LICENSE;md5=7702f203b58979ebbc31bfaeb44f219c"
 
-inherit cmake systemd
+inherit cmake systemd pkgconfig
 
 EXTRA_OECMAKE = "-DBUILD_TESTS=OFF -DBUILD_STATIC_LIBS=OFF"
 
@@ -33,7 +49,7 @@ PACKAGES = " \
     ${PN}-server-doc \
 "
 
-do_install_append() {
+do_install:append() {
     install -d ${D}${systemd_system_unitdir}
     install -m 0644 ${WORKDIR}/snapclient.service ${D}${systemd_system_unitdir}
     install -m 0644 ${WORKDIR}/snapserver.service ${D}${systemd_system_unitdir}
@@ -49,18 +65,18 @@ SYSTEMD_PACKAGES = "${PN}-client ${PN}-server"
 SYSTEMD_SERVICE_${PN}-client = "snapclient.service"
 SYSTEMD_SERVICE_${PN}-server = "snapserver.service"
 
-FILES_${PN}-client = " \
+FILES:${PN}-client = " \
     ${bindir}/snapclient \
     ${systemd_system_unitdir}/snapclient.service \
 "
 
-FILES_${PN}-client-doc = "${mandir}/man1/snapclient*"
+FILES:${PN}-client-doc = "${mandir}/man1/snapclient*"
 
-FILES_${PN}-server = " \
+FILES:${PN}-server = " \
     ${bindir}/snapserver \
     ${sysconfdir}/snapserver* \
     ${datadir}/snapserver/* \
     ${systemd_system_unitdir}/snapserver.service \
 "
 
-FILES_${PN}-server-doc = "${mandir}/man1/snapserver*"
+FILES:${PN}-server-doc = "${mandir}/man1/snapserver*"
