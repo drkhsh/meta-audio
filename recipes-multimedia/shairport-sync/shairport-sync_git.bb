@@ -13,8 +13,9 @@ DEPENDS += " \
 PV = "4.3.4"
 S = "${WORKDIR}/git"
 
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 SRC_URI = " \
-    git://github.com/mikebrady/shairport-sync.git;protocol=https;branch=development;tag=${PV} \
+    git://github.com/mikebrady/shairport-sync.git;protocol=https;branch=master;tag=${PV} \
     file://shairport-sync.service \
 "
 LIC_FILES_CHKSUM = "file://../git/LICENSES;md5=9f329b7b34fcd334fb1f8e2eb03d33ff"
@@ -27,10 +28,10 @@ PACKAGECONFIG[stdout] = "--with-pipe --with-stdout,"
 
 EXTRA_OECONF="--with-alsa --with-avahi --with-ssl=openssl --with-metadata"
 
-# systemd unit file is not enabled by default because snapcast launches shairport-sync manually
-SYSTEMD_SERVICE_${PN} = "${@bb.utils.contains('PACKAGECONFIG', 'systemd', 'shairport-sync.service', '', d)}"
+SYSTEMD_SERVICE:${PN} = "${@bb.utils.contains('PACKAGECONFIG', 'systemd', 'shairport-sync.service', '', d)}"
+SYSTEMD_AUTO_ENABLE:${PN} = "enable"
 
-do_install_prepend() {
+do_install:prepend() {
     cp ${S}/scripts/${PN}.conf ${WORKDIR}/build/scripts/
 
     if ${@bb.utils.contains('PACKAGECONFIG', 'systemd', 'true', 'false', d)}; then
@@ -38,3 +39,4 @@ do_install_prepend() {
         install -m 0644 ${S}/../shairport-sync.service ${D}${systemd_system_unitdir}
     fi
 }
+
