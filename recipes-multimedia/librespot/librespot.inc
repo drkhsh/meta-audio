@@ -1,10 +1,13 @@
-DEPENDS += " alsa-lib"
+DEPENDS += " alsa-lib libpulse libpipewire"
+RDEPENDS:${PN} += " alsa-lib libpulse libpipewire"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 SRC_URI += " file://lock.patch"
 
 inherit pkgconfig systemd
+
+CARGO_BUILD_FLAGS += " --features alsa-backend,pulseaudio-backend"
 
 SYSTEMD_SERVICE:${PN} = "librespot.service"
 SYSTEMD_AUTO_ENABLE:${PN} = "enable"
