@@ -1,5 +1,5 @@
-DEPENDS += " alsa-lib libpulse libpipewire"
-RDEPENDS:${PN} += " alsa-lib libpulse libpipewire"
+DEPENDS += " alsa-lib libpulse "
+RDEPENDS:librespot += " alsa-lib libpulse libpipewire "
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
