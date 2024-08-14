@@ -10,6 +10,7 @@ PYPI_PACKAGE = "pulsemixer"
 
 inherit pypi setuptools3
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     libpulse \
+    python3-curses \
 "
