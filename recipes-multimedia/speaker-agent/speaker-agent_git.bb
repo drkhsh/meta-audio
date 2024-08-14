@@ -13,6 +13,7 @@ LIC_FILES_CHKSUM = "file://README.md;md5=77ef16d0fe681bc157b0bb00be90d9e4"
 RDEPENDS:${PN} += " \
     python3-core \
     python3-dbus \
+    python3-pygobject \
 "
 
 inherit systemd
