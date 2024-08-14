@@ -12,6 +12,8 @@ DEPENDS += " \
     libopus \
     expat \
     soxr \
+    libpulse \
+    libpipewire \
 "
 RDEPENDS:${PN} += " \
     alsa-utils \
@@ -24,6 +26,7 @@ RDEPENDS:${PN} += " \
     soxr \
     soxr-dev \
     libpulse \
+    libpipewire \
 "
 
 PV = "0.28.0"
@@ -62,8 +65,8 @@ do_install:append() {
 }
 
 SYSTEMD_PACKAGES = "${PN}-client ${PN}-server"
-SYSTEMD_SERVICE_${PN}-client = "snapclient.service"
-SYSTEMD_SERVICE_${PN}-server = "snapserver.service"
+SYSTEMD_SERVICE:${PN}-client = "snapclient.service"
+SYSTEMD_SERVICE:${PN}-server = "snapserver.service"
 
 FILES:${PN}-client = " \
     ${bindir}/snapclient \
