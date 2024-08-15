@@ -13,7 +13,6 @@ DEPENDS += " \
 "
 RDEPENDS:${PN} += " \
     pipewire \
-    avahi \
 "
 
 PV = "4.3.4"
