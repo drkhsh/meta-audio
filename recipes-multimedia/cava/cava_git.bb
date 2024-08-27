@@ -11,8 +11,8 @@ PROVIDES = "cava"
 
 S = "${WORKDIR}/git"
 
-DEPENDS = "alsa-lib ncurses fftw glibc iniparser libpulse libpipewire"
-RDEPENDS:${PN} += " libpulse libpipewire"
+DEPENDS = "alsa-lib ncurses fftw glibc iniparser libpulse libpipewire pipewire"
+RDEPENDS:${PN} += " libpulse libpipewire pipewire-jack"
 
 inherit autotools pkgconfig
 
