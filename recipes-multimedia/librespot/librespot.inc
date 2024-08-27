@@ -1,5 +1,5 @@
-DEPENDS += " alsa-lib libpulse pipewire"
-RDEPENDS:librespot += " alsa-lib libpulse pipewire"
+DEPENDS += " alsa-lib libpulse jack pipewire"
+RDEPENDS:librespot += " alsa-lib libpulse pipewire pipewire-jack"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
@@ -7,7 +7,7 @@ SRC_URI += " file://lock.patch"
 
 inherit pkgconfig systemd
 
-CARGO_BUILD_FLAGS += " --features alsa-backend,pulseaudio-backend"
+CARGO_BUILD_FLAGS += " --features alsa-backend,pulseaudio-backend,jackaudio-backend"
 
 SYSTEMD_SERVICE:${PN} = "librespot.service"
 SYSTEMD_AUTO_ENABLE:${PN} = "enable"
