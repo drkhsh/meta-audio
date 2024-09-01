@@ -27,9 +27,13 @@ RDEPENDS:${PN} += " \
     soxr-dev \
     libpulse \
     libpipewire \
+    pipewire-jack \
+"
+RDEPENDS:${PN}-server += " \
+    pipewire-jack \
 "
 
-PV = "0.28.0"
+PV = "0.29.0"
 S = "${WORKDIR}/git"
 
 SRC_URI = " \
