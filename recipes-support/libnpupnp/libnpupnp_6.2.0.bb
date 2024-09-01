@@ -1,7 +1,7 @@
 DESCRIPTION = "A C++ base UPnP library, derived from Portable UPnP, a.k.a libupnp."
 LICENSE = "GPL-2.0-only"
 
-SRCREV = "libnpupnp-v6.1.2"
+SRCREV = "a760b3278aee06408d9f50d0c54942f5ba9df989"
 SRC_URI = "git://framagit.org/medoc92/npupnp;branch=master;protocol=https"
 
 LIC_FILES_CHKSUM = "file://COPYING;md5=394a0f17b97f33426275571e15920434"

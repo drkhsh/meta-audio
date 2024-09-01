@@ -3,7 +3,7 @@ LICENSE = "GPL-2.0-only"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-SRCREV = "upmpdcli-v1.8.12"
+SRCREV = "ecdc2b2f6a417581b041a33bba0f40237e91cfcd"
 SRC_URI = "git://framagit.org/medoc92/upmpdcli;branch=master;protocol=https \
            file://upmpdcli.conf"
 
