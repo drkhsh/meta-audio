@@ -6,11 +6,10 @@ import alsaaudio
 import os
 
 mixer = os.getenv('MIXER')
-index = int(os.getenv('MIXER_INDEX'))
 vol_up_pin = int(os.getenv('GPIO_VOL_UP'))
 vol_dn_pin = int(os.getenv('GPIO_VOL_DOWN'))
 
-m = alsaaudio.Mixer(mixer, cardindex=index)
+m = alsaaudio.Mixer(mixer)
 vol = m.getvolume()[0]
 is_mute = m.getmute()[0]
 
