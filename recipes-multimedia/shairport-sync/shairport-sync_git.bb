@@ -8,11 +8,14 @@ DEPENDS += " \
     avahi \
     alsa-lib \
     openssl \
-    libpipewire \
+    pipewire \
     libpulse \
+    soxr \
 "
 RDEPENDS:${PN} += " \
     pipewire \
+    pipewire-jack \
+    soxr \
 "
 
 PV = "4.3.4"
@@ -31,7 +34,7 @@ PACKAGECONFIG ??= "stdout"
 PACKAGECONFIG[systemd] = ""
 PACKAGECONFIG[stdout] = "--with-pipe --with-stdout,"
 
-EXTRA_OECONF="--with-alsa --with-avahi --with-ssl=openssl --with-metadata --with-pa --with-pw"
+EXTRA_OECONF="--with-alsa --with-avahi --with-ssl=openssl --with-metadata --with-pa --with-pw --with-jack --with-soxr"
 
 SYSTEMD_SERVICE:${PN} = "${@bb.utils.contains('PACKAGECONFIG', 'systemd', 'shairport-sync.service', '', d)}"
 SYSTEMD_AUTO_ENABLE:${PN} = "enable"
