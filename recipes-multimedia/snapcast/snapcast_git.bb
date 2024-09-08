@@ -4,7 +4,6 @@ LICENSE = "GPL-3.0-only"
 
 DEPENDS += " \
     boost \
-    alsa-utils \
     avahi \
     alsa-lib \
     libvorbis \
@@ -13,23 +12,20 @@ DEPENDS += " \
     expat \
     soxr \
     libpulse \
-    libpipewire \
+    pipewire \
 "
 RDEPENDS:${PN} += " \
     alsa-utils \
     avahi \
-    alsa-lib \
-    libvorbis \
-    flac \
-    libopus \
-    expat \
     soxr \
-    soxr-dev \
-    libpulse \
-    libpipewire \
+    pipewire \
     pipewire-jack \
 "
 RDEPENDS:${PN}-server += " \
+    alsa-utils \
+    avahi \
+    soxr \
+    pipewire \
     pipewire-jack \
 "
 
