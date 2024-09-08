@@ -17,6 +17,9 @@ inherit cmake
 
 EXTRA_OECMAKE = "-S ${S} -B ${B} -DCMAKE_CROSSCOMPILING=TRUE -DCMAKE_INSTALL_PREFIX=/usr -DLDAC_SOFT_FLOAT=OFF"
 
+# Workaround for network access issue during configure step
+do_configure[network] = "1"
+
 do_configure:prepend() {
   cd ${WORKDIR}/git
   git submodule update --init --recursive
