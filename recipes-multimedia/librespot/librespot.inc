@@ -1,4 +1,4 @@
-DEPENDS += " alsa-lib libpulse jack pipewire"
+DEPENDS += " alsa-lib libpulse pipewire"
 RDEPENDS:librespot += " alsa-lib libpulse pipewire pipewire-jack"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
