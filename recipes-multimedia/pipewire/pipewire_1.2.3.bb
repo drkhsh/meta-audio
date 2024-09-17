@@ -61,8 +61,8 @@ EXTRA_OEMESON += " \
     -Dsession-managers='[]' \
     -Dlv2=disabled \
     -Droc=disabled \
-    -Dbluez5-codec-aptx=disabled \
-    -Dbluez5-codec-ldac=disabled \
+    -Dbluez5-codec-aptx=enabled \
+    -Dbluez5-codec-ldac=enabled \
     -Dlegacy-rtkit=false \
     -Dlibmysofa=disabled \
 "
