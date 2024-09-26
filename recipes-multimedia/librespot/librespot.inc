@@ -1,7 +1,10 @@
-DEPENDS += " alsa-lib libpulse pipewire"
+DEPENDS += " alsa-lib libpulse pipewire clang-native"
 RDEPENDS:librespot += " alsa-lib libpulse pipewire pipewire-jack"
+export LIBCLANG_PATH = "${WORKDIR}/recipe-sysroot-native${libdir}"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
+
+SRC_URI += "file://0001-aws-lc-rs-enable-bindgen-for-cross-compilation.patch file://0002-update-Cargo.lock.patch"
 
 inherit pkgconfig systemd
 
