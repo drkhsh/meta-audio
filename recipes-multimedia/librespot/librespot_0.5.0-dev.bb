@@ -35,6 +35,7 @@ SRC_URI += " \
     crate://crates.io/atomic-waker/1.1.2;sha256sum=1505bd5d3d116872e7271a6d4e16d81d0c8570876c8de68093a09ac269d8aac0;atomic-waker-1.1.2.sha256sum=1505bd5d3d116872e7271a6d4e16d81d0c8570876c8de68093a09ac269d8aac0 \
     crate://crates.io/atomic_refcell/0.1.13;sha256sum=41e67cd8309bbd06cd603a9e693a784ac2e5d1e955f11286e355089fcab3047c;atomic_refcell-0.1.13.sha256sum=41e67cd8309bbd06cd603a9e693a784ac2e5d1e955f11286e355089fcab3047c \
     crate://crates.io/autocfg/1.3.0;sha256sum=0c4b4d0bd25bd0b74681c0ad21497610ce1b7c91b1022cd21c80c6fbdd9476b0;autocfg-1.3.0.sha256sum=0c4b4d0bd25bd0b74681c0ad21497610ce1b7c91b1022cd21c80c6fbdd9476b0 \
+    crate://crates.io/aws-lc-fips-sys/0.12.11;sha256sum=33d41a5d02120c5eca009507574fa0d4885fa370cbda6b561d91ba463c3025a7;aws-lc-fips-sys-0.12.11.sha256sum=33d41a5d02120c5eca009507574fa0d4885fa370cbda6b561d91ba463c3025a7 \
     crate://crates.io/aws-lc-rs/1.9.0;sha256sum=2f95446d919226d587817a7d21379e6eb099b97b45110a7f272a444ca5c54070;aws-lc-rs-1.9.0.sha256sum=2f95446d919226d587817a7d21379e6eb099b97b45110a7f272a444ca5c54070 \
     crate://crates.io/aws-lc-sys/0.21.2;sha256sum=b3ddc4a5b231dd6958b140ff3151b6412b3f4321fab354f399eec8f14b06df62;aws-lc-sys-0.21.2.sha256sum=b3ddc4a5b231dd6958b140ff3151b6412b3f4321fab354f399eec8f14b06df62 \
     crate://crates.io/backtrace/0.3.74;sha256sum=8d82cb332cdfaed17ae235a638438ac4d4839913cc2af585c3c6746e8f8bee1a;backtrace-0.3.74.sha256sum=8d82cb332cdfaed17ae235a638438ac4d4839913cc2af585c3c6746e8f8bee1a \
@@ -348,6 +349,7 @@ SRC_URI += " \
     crate://crates.io/unicode-ident/1.0.13;sha256sum=e91b56cd4cadaeb79bbf1a5645f6b4f8dc5bde8834ad5894a8db35fda9efa1fe;unicode-ident-1.0.13.sha256sum=e91b56cd4cadaeb79bbf1a5645f6b4f8dc5bde8834ad5894a8db35fda9efa1fe \
     crate://crates.io/unicode-normalization/0.1.24;sha256sum=5033c97c4262335cded6d6fc3e5c18ab755e1a3dc96376350f3d8e9f009ad956;unicode-normalization-0.1.24.sha256sum=5033c97c4262335cded6d6fc3e5c18ab755e1a3dc96376350f3d8e9f009ad956 \
     crate://crates.io/unicode-width/0.1.14;sha256sum=7dd6e30e90baa6f72411720665d41d89b9a3d039dc45b8faea1ddd07f617f6af;unicode-width-0.1.14.sha256sum=7dd6e30e90baa6f72411720665d41d89b9a3d039dc45b8faea1ddd07f617f6af \
+    crate://crates.io/untrusted/0.7.1;sha256sum=a156c684c91ea7d62626509bce3cb4e1d9ed5c4d978f7b4352658f96a4c26b4a;untrusted-0.7.1.sha256sum=a156c684c91ea7d62626509bce3cb4e1d9ed5c4d978f7b4352658f96a4c26b4a \
     crate://crates.io/untrusted/0.9.0;sha256sum=8ecb6da28b8a351d773b68d5825ac39017e680750f980f3a1a85cd8dd28a47c1;untrusted-0.9.0.sha256sum=8ecb6da28b8a351d773b68d5825ac39017e680750f980f3a1a85cd8dd28a47c1 \
     crate://crates.io/url/2.5.2;sha256sum=22784dbdf76fdde8af1aeda5622b546b422b6fc585325248a2bf9f5e41e94d6c;url-2.5.2.sha256sum=22784dbdf76fdde8af1aeda5622b546b422b6fc585325248a2bf9f5e41e94d6c \
     crate://crates.io/utf-8/0.7.6;sha256sum=09cc8ee72d2a9becf2f2febe0205bbed8fc6615b7cb429ad062dc7b7ddd036a9;utf-8-0.7.6.sha256sum=09cc8ee72d2a9becf2f2febe0205bbed8fc6615b7cb429ad062dc7b7ddd036a9 \
