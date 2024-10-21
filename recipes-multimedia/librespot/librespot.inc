@@ -4,8 +4,6 @@ export LIBCLANG_PATH = "${WORKDIR}/recipe-sysroot-native${libdir}"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-SRC_URI += "file://0001-aws-lc-rs-enable-bindgen-for-cross-compilation.patch file://0002-update-Cargo.lock.patch"
-
 inherit pkgconfig systemd
 
 CARGO_BUILD_FLAGS += " --features alsa-backend,pulseaudio-backend,jackaudio-backend"
