@@ -8,10 +8,10 @@ inherit cargo
 # how to get librespot could be as easy as but default to a git checkout:
 # SRC_URI += "crate://crates.io/librespot/0.5.0"
 SRC_URI += "git://github.com/librespot-org/librespot/;protocol=https;nobranch=1"
-SRCREV = "84d28e887b0c9b8e07dcbf890a17cdfe7f3cd8d1"
+SRCREV = "6639bdedbbccfa1b3b91f051084691bcd8d401e7"
 S = "${WORKDIR}/git"
 CARGO_SRC_DIR = ""
-
+PV:append = ".AUTOINC+6639bdedbb"
 
 # please note if you have entries that do not begin with crate://
 # you must change them to how that package can be fetched
@@ -29,12 +29,13 @@ SRC_URI += " \
     crate://crates.io/anstyle-query/1.1.1;sha256sum=6d36fc52c7f6c869915e99412912f22093507da8d9e942ceaf66fe4b7c14422a;anstyle-query-1.1.1.sha256sum=6d36fc52c7f6c869915e99412912f22093507da8d9e942ceaf66fe4b7c14422a \
     crate://crates.io/anstyle-wincon/3.0.4;sha256sum=5bf74e1b6e971609db8ca7a9ce79fd5768ab6ae46441c572e46cf596f59e57f8;anstyle-wincon-3.0.4.sha256sum=5bf74e1b6e971609db8ca7a9ce79fd5768ab6ae46441c572e46cf596f59e57f8 \
     crate://crates.io/anstyle/1.0.8;sha256sum=1bec1de6f59aedf83baf9ff929c98f2ad654b97c9510f4e70cf6f661d49fd5b1;anstyle-1.0.8.sha256sum=1bec1de6f59aedf83baf9ff929c98f2ad654b97c9510f4e70cf6f661d49fd5b1 \
-    crate://crates.io/anyhow/1.0.89;sha256sum=86fdf8605db99b54d3cd748a44c6d04df638eb5dafb219b135d0149bd0db01f6;anyhow-1.0.89.sha256sum=86fdf8605db99b54d3cd748a44c6d04df638eb5dafb219b135d0149bd0db01f6 \
+    crate://crates.io/anyhow/1.0.91;sha256sum=c042108f3ed77fd83760a5fd79b53be043192bb3b9dba91d8c574c0ada7850c8;anyhow-1.0.91.sha256sum=c042108f3ed77fd83760a5fd79b53be043192bb3b9dba91d8c574c0ada7850c8 \
     crate://crates.io/arrayvec/0.7.6;sha256sum=7c02d123df017efcdfbd739ef81735b36c5ba83ec3c59c80a9d7ecc718f92e50;arrayvec-0.7.6.sha256sum=7c02d123df017efcdfbd739ef81735b36c5ba83ec3c59c80a9d7ecc718f92e50 \
     crate://crates.io/async-trait/0.1.83;sha256sum=721cae7de5c34fbb2acd27e21e6d2cf7b886dce0c27388d46c4e6c47ea4318dd;async-trait-0.1.83.sha256sum=721cae7de5c34fbb2acd27e21e6d2cf7b886dce0c27388d46c4e6c47ea4318dd \
     crate://crates.io/atomic-waker/1.1.2;sha256sum=1505bd5d3d116872e7271a6d4e16d81d0c8570876c8de68093a09ac269d8aac0;atomic-waker-1.1.2.sha256sum=1505bd5d3d116872e7271a6d4e16d81d0c8570876c8de68093a09ac269d8aac0 \
     crate://crates.io/atomic_refcell/0.1.13;sha256sum=41e67cd8309bbd06cd603a9e693a784ac2e5d1e955f11286e355089fcab3047c;atomic_refcell-0.1.13.sha256sum=41e67cd8309bbd06cd603a9e693a784ac2e5d1e955f11286e355089fcab3047c \
     crate://crates.io/autocfg/1.4.0;sha256sum=ace50bade8e6234aa140d9a2f552bbee1db4d353f69b8217bc503490fc1a9f26;autocfg-1.4.0.sha256sum=ace50bade8e6234aa140d9a2f552bbee1db4d353f69b8217bc503490fc1a9f26 \
+    crate://crates.io/aws-lc-fips-sys/0.12.13;sha256sum=bf12b67bc9c5168f68655aadb2a12081689a58f1d9b1484705e4d1810ed6e4ac;aws-lc-fips-sys-0.12.13.sha256sum=bf12b67bc9c5168f68655aadb2a12081689a58f1d9b1484705e4d1810ed6e4ac \
     crate://crates.io/aws-lc-rs/1.10.0;sha256sum=cdd82dba44d209fddb11c190e0a94b78651f95299598e472215667417a03ff1d;aws-lc-rs-1.10.0.sha256sum=cdd82dba44d209fddb11c190e0a94b78651f95299598e472215667417a03ff1d \
     crate://crates.io/aws-lc-sys/0.22.0;sha256sum=df7a4168111d7eb622a31b214057b8509c0a7e1794f44c546d742330dc793972;aws-lc-sys-0.22.0.sha256sum=df7a4168111d7eb622a31b214057b8509c0a7e1794f44c546d742330dc793972 \
     crate://crates.io/backtrace/0.3.74;sha256sum=8d82cb332cdfaed17ae235a638438ac4d4839913cc2af585c3c6746e8f8bee1a;backtrace-0.3.74.sha256sum=8d82cb332cdfaed17ae235a638438ac4d4839913cc2af585c3c6746e8f8bee1a \
@@ -50,8 +51,8 @@ SRC_URI += " \
     crate://crates.io/bumpalo/3.16.0;sha256sum=79296716171880943b8470b5f8d03aa55eb2e645a4874bdbb28adb49162e012c;bumpalo-3.16.0.sha256sum=79296716171880943b8470b5f8d03aa55eb2e645a4874bdbb28adb49162e012c \
     crate://crates.io/bytemuck/1.19.0;sha256sum=8334215b81e418a0a7bdb8ef0849474f40bb10c8b71f1c4ed315cff49f32494d;bytemuck-1.19.0.sha256sum=8334215b81e418a0a7bdb8ef0849474f40bb10c8b71f1c4ed315cff49f32494d \
     crate://crates.io/byteorder/1.5.0;sha256sum=1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b;byteorder-1.5.0.sha256sum=1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b \
-    crate://crates.io/bytes/1.7.2;sha256sum=428d9aa8fbc0670b7b8d6030a7fadd0f86151cae55e4dbbece15f3780a3dfaf3;bytes-1.7.2.sha256sum=428d9aa8fbc0670b7b8d6030a7fadd0f86151cae55e4dbbece15f3780a3dfaf3 \
-    crate://crates.io/cc/1.1.30;sha256sum=b16803a61b81d9eabb7eae2588776c4c1e584b738ede45fdbb4c972cec1e9945;cc-1.1.30.sha256sum=b16803a61b81d9eabb7eae2588776c4c1e584b738ede45fdbb4c972cec1e9945 \
+    crate://crates.io/bytes/1.8.0;sha256sum=9ac0150caa2ae65ca5bd83f25c7de183dea78d4d366469f148435e2acfbad0da;bytes-1.8.0.sha256sum=9ac0150caa2ae65ca5bd83f25c7de183dea78d4d366469f148435e2acfbad0da \
+    crate://crates.io/cc/1.1.31;sha256sum=c2e7962b54006dcfcc61cb72735f4d89bb97061dd6a7ed882ec6b8ee53714c6f;cc-1.1.31.sha256sum=c2e7962b54006dcfcc61cb72735f4d89bb97061dd6a7ed882ec6b8ee53714c6f \
     crate://crates.io/cesu8/1.1.0;sha256sum=6d43a04d8753f35258c91f8ec639f792891f748a1edbd759cf1dcea3382ad83c;cesu8-1.1.0.sha256sum=6d43a04d8753f35258c91f8ec639f792891f748a1edbd759cf1dcea3382ad83c \
     crate://crates.io/cexpr/0.6.0;sha256sum=6fac387a98bb7c37292057cffc56d62ecb629900026402633ae9160df93a8766;cexpr-0.6.0.sha256sum=6fac387a98bb7c37292057cffc56d62ecb629900026402633ae9160df93a8766 \
     crate://crates.io/cfg-expr/0.17.0;sha256sum=d0890061c4d3223e7267f3bad2ec40b997d64faac1c2815a4a9d95018e2b9e9c;cfg-expr-0.17.0.sha256sum=d0890061c4d3223e7267f3bad2ec40b997d64faac1c2815a4a9d95018e2b9e9c \
@@ -170,7 +171,7 @@ SRC_URI += " \
     crate://crates.io/js-sys/0.3.72;sha256sum=6a88f1bda2bd75b0452a14784937d796722fdebfe50df998aeb3f0b7603019a9;js-sys-0.3.72.sha256sum=6a88f1bda2bd75b0452a14784937d796722fdebfe50df998aeb3f0b7603019a9 \
     crate://crates.io/lazy_static/1.5.0;sha256sum=bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe;lazy_static-1.5.0.sha256sum=bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe \
     crate://crates.io/lazycell/1.3.0;sha256sum=830d08ce1d1d941e6b30645f1a0eb5643013d835ce3779a5fc208261dbe10f55;lazycell-1.3.0.sha256sum=830d08ce1d1d941e6b30645f1a0eb5643013d835ce3779a5fc208261dbe10f55 \
-    crate://crates.io/libc/0.2.159;sha256sum=561d97a539a36e26a9a5fad1ea11a3039a67714694aaa379433e580854bc3dc5;libc-0.2.159.sha256sum=561d97a539a36e26a9a5fad1ea11a3039a67714694aaa379433e580854bc3dc5 \
+    crate://crates.io/libc/0.2.161;sha256sum=8e9489c2807c139ffd9c1794f4af0ebe86a828db53ecdc7fea2111d0fed085d1;libc-0.2.161.sha256sum=8e9489c2807c139ffd9c1794f4af0ebe86a828db53ecdc7fea2111d0fed085d1 \
     crate://crates.io/libloading/0.7.4;sha256sum=b67380fd3b2fbe7527a606e18729d21c6f3951633d0500574c4dc22d2d638b9f;libloading-0.7.4.sha256sum=b67380fd3b2fbe7527a606e18729d21c6f3951633d0500574c4dc22d2d638b9f \
     crate://crates.io/libloading/0.8.5;sha256sum=4979f22fdb869068da03c9f7528f8297c6fd2606bc3a4affe42e6a823fdb8da4;libloading-0.8.5.sha256sum=4979f22fdb869068da03c9f7528f8297c6fd2606bc3a4affe42e6a823fdb8da4 \
     crate://crates.io/libm/0.2.8;sha256sum=4ec2a862134d2a7d32d7983ddcdd1c4923530833c9f2ea1a44fc5fa473989058;libm-0.2.8.sha256sum=4ec2a862134d2a7d32d7983ddcdd1c4923530833c9f2ea1a44fc5fa473989058 \
@@ -235,14 +236,14 @@ SRC_URI += " \
     crate://crates.io/portaudio-sys/0.1.1;sha256sum=5194a4fa953b4ffd851c320ef6f0484cd7278cb7169ea9d6c433e49b23f7b7f5;portaudio-sys-0.1.1.sha256sum=5194a4fa953b4ffd851c320ef6f0484cd7278cb7169ea9d6c433e49b23f7b7f5 \
     crate://crates.io/powerfmt/0.2.0;sha256sum=439ee305def115ba05938db6eb1644ff94165c5ab5e9420d1c1bcedbba909391;powerfmt-0.2.0.sha256sum=439ee305def115ba05938db6eb1644ff94165c5ab5e9420d1c1bcedbba909391 \
     crate://crates.io/ppv-lite86/0.2.20;sha256sum=77957b295656769bb8ad2b6a6b09d897d94f05c41b069aede1fcdaa675eaea04;ppv-lite86-0.2.20.sha256sum=77957b295656769bb8ad2b6a6b09d897d94f05c41b069aede1fcdaa675eaea04 \
-    crate://crates.io/prettyplease/0.2.22;sha256sum=479cf940fbbb3426c32c5d5176f62ad57549a0bb84773423ba8be9d089f5faba;prettyplease-0.2.22.sha256sum=479cf940fbbb3426c32c5d5176f62ad57549a0bb84773423ba8be9d089f5faba \
+    crate://crates.io/prettyplease/0.2.25;sha256sum=64d1ec885c64d0457d564db4ec299b2dae3f9c02808b8ad9c3a089c591b18033;prettyplease-0.2.25.sha256sum=64d1ec885c64d0457d564db4ec299b2dae3f9c02808b8ad9c3a089c591b18033 \
     crate://crates.io/priority-queue/2.1.1;sha256sum=714c75db297bc88a63783ffc6ab9f830698a6705aa0201416931759ef4c8183d;priority-queue-2.1.1.sha256sum=714c75db297bc88a63783ffc6ab9f830698a6705aa0201416931759ef4c8183d \
     crate://crates.io/proc-macro-crate/3.2.0;sha256sum=8ecf48c7ca261d60b74ab1a7b20da18bede46776b2e55535cb958eb595c5fa7b;proc-macro-crate-3.2.0.sha256sum=8ecf48c7ca261d60b74ab1a7b20da18bede46776b2e55535cb958eb595c5fa7b \
-    crate://crates.io/proc-macro2/1.0.87;sha256sum=b3e4daa0dcf6feba26f985457cdf104d4b4256fc5a09547140f3631bb076b19a;proc-macro2-1.0.87.sha256sum=b3e4daa0dcf6feba26f985457cdf104d4b4256fc5a09547140f3631bb076b19a \
-    crate://crates.io/protobuf-codegen/3.6.0;sha256sum=411c15a212b4de05eb8bc989fd066a74c86bd3c04e27d6e86bd7703b806d7734;protobuf-codegen-3.6.0.sha256sum=411c15a212b4de05eb8bc989fd066a74c86bd3c04e27d6e86bd7703b806d7734 \
-    crate://crates.io/protobuf-parse/3.6.0;sha256sum=06f45f16b522d92336e839b5e40680095a045e36a1e7f742ba682ddc85236772;protobuf-parse-3.6.0.sha256sum=06f45f16b522d92336e839b5e40680095a045e36a1e7f742ba682ddc85236772 \
-    crate://crates.io/protobuf-support/3.6.0;sha256sum=faf96d872914fcda2b66d66ea3fff2be7c66865d31c7bb2790cff32c0e714880;protobuf-support-3.6.0.sha256sum=faf96d872914fcda2b66d66ea3fff2be7c66865d31c7bb2790cff32c0e714880 \
-    crate://crates.io/protobuf/3.6.0;sha256sum=3018844a02746180074f621e847703737d27d89d7f0721a7a4da317f88b16385;protobuf-3.6.0.sha256sum=3018844a02746180074f621e847703737d27d89d7f0721a7a4da317f88b16385 \
+    crate://crates.io/proc-macro2/1.0.89;sha256sum=f139b0662de085916d1fb67d2b4169d1addddda1919e696f3252b740b629986e;proc-macro2-1.0.89.sha256sum=f139b0662de085916d1fb67d2b4169d1addddda1919e696f3252b740b629986e \
+    crate://crates.io/protobuf-codegen/3.7.1;sha256sum=e26b833f144769a30e04b1db0146b2aaa53fd2fd83acf10a6b5f996606c18144;protobuf-codegen-3.7.1.sha256sum=e26b833f144769a30e04b1db0146b2aaa53fd2fd83acf10a6b5f996606c18144 \
+    crate://crates.io/protobuf-parse/3.7.1;sha256sum=322330e133eab455718444b4e033ebfac7c6528972c784fcde28d2cc783c6257;protobuf-parse-3.7.1.sha256sum=322330e133eab455718444b4e033ebfac7c6528972c784fcde28d2cc783c6257 \
+    crate://crates.io/protobuf-support/3.7.1;sha256sum=b088fd20b938a875ea00843b6faf48579462630015c3788d397ad6a786663252;protobuf-support-3.7.1.sha256sum=b088fd20b938a875ea00843b6faf48579462630015c3788d397ad6a786663252 \
+    crate://crates.io/protobuf/3.7.1;sha256sum=a3a7c64d9bf75b1b8d981124c14c179074e8caa7dfe7b6a12e6222ddcd0c8f72;protobuf-3.7.1.sha256sum=a3a7c64d9bf75b1b8d981124c14c179074e8caa7dfe7b6a12e6222ddcd0c8f72 \
     crate://crates.io/quick-xml/0.36.2;sha256sum=f7649a7b4df05aed9ea7ec6f628c67c9953a43869b8bc50929569b2999d443fe;quick-xml-0.36.2.sha256sum=f7649a7b4df05aed9ea7ec6f628c67c9953a43869b8bc50929569b2999d443fe \
     crate://crates.io/quote/1.0.37;sha256sum=b5b9d34b8991d19d98081b46eacdd8eb58c6f2b201139f7c5f643cc155a633af;quote-1.0.37.sha256sum=b5b9d34b8991d19d98081b46eacdd8eb58c6f2b201139f7c5f643cc155a633af \
     crate://crates.io/rand/0.8.5;sha256sum=34af8d1a0e25924bc5b7c43c079c942339d8f0a8b57c39049bef581b46327404;rand-0.8.5.sha256sum=34af8d1a0e25924bc5b7c43c079c942339d8f0a8b57c39049bef581b46327404 \
@@ -269,7 +270,7 @@ SRC_URI += " \
     crate://crates.io/rustls-webpki/0.102.8;sha256sum=64ca1bc8749bd4cf37b5ce386cc146580777b4e8572c7b97baf22c83f444bee9;rustls-webpki-0.102.8.sha256sum=64ca1bc8749bd4cf37b5ce386cc146580777b4e8572c7b97baf22c83f444bee9 \
     crate://crates.io/rustls/0.21.12;sha256sum=3f56a14d1f48b391359b22f731fd4bd7e43c97f3c50eee276f3aa09c94784d3e;rustls-0.21.12.sha256sum=3f56a14d1f48b391359b22f731fd4bd7e43c97f3c50eee276f3aa09c94784d3e \
     crate://crates.io/rustls/0.22.4;sha256sum=bf4ef73721ac7bcd79b2b315da7779d8fc09718c6b3d2d1b2d94850eb8c18432;rustls-0.22.4.sha256sum=bf4ef73721ac7bcd79b2b315da7779d8fc09718c6b3d2d1b2d94850eb8c18432 \
-    crate://crates.io/rustls/0.23.14;sha256sum=415d9944693cb90382053259f89fbb077ea730ad7273047ec63b19bc9b160ba8;rustls-0.23.14.sha256sum=415d9944693cb90382053259f89fbb077ea730ad7273047ec63b19bc9b160ba8 \
+    crate://crates.io/rustls/0.23.15;sha256sum=5fbb44d7acc4e873d613422379f69f237a1b141928c02f6bc6ccfddddc2d7993;rustls-0.23.15.sha256sum=5fbb44d7acc4e873d613422379f69f237a1b141928c02f6bc6ccfddddc2d7993 \
     crate://crates.io/rustversion/1.0.18;sha256sum=0e819f2bc632f285be6d7cd36e25940d45b2391dd6d9b939e79de557f7014248;rustversion-1.0.18.sha256sum=0e819f2bc632f285be6d7cd36e25940d45b2391dd6d9b939e79de557f7014248 \
     crate://crates.io/ryu/1.0.18;sha256sum=f3cb5ba0dc43242ce17de99c180e96db90b235b8a9fdc9543c96d2209116bd9f;ryu-1.0.18.sha256sum=f3cb5ba0dc43242ce17de99c180e96db90b235b8a9fdc9543c96d2209116bd9f \
     crate://crates.io/same-file/1.0.6;sha256sum=93fc1dc3aaa9bfed95e02e6eadabb4baf7e3078b0bd1b4d7b6b0b68378900502;same-file-1.0.6.sha256sum=93fc1dc3aaa9bfed95e02e6eadabb4baf7e3078b0bd1b4d7b6b0b68378900502 \
@@ -280,9 +281,9 @@ SRC_URI += " \
     crate://crates.io/sdl2/0.37.0;sha256sum=3b498da7d14d1ad6c839729bd4ad6fc11d90a57583605f3b4df2cd709a9cd380;sdl2-0.37.0.sha256sum=3b498da7d14d1ad6c839729bd4ad6fc11d90a57583605f3b4df2cd709a9cd380 \
     crate://crates.io/security-framework-sys/2.12.0;sha256sum=ea4a292869320c0272d7bc55a5a6aafaff59b4f63404a003887b679a2e05b4b6;security-framework-sys-2.12.0.sha256sum=ea4a292869320c0272d7bc55a5a6aafaff59b4f63404a003887b679a2e05b4b6 \
     crate://crates.io/security-framework/2.11.1;sha256sum=897b2245f0b511c87893af39b033e5ca9cce68824c4d7e7630b5a1d339658d02;security-framework-2.11.1.sha256sum=897b2245f0b511c87893af39b033e5ca9cce68824c4d7e7630b5a1d339658d02 \
-    crate://crates.io/serde/1.0.210;sha256sum=c8e3592472072e6e22e0a54d5904d9febf8508f65fb8552499a1abc7d1078c3a;serde-1.0.210.sha256sum=c8e3592472072e6e22e0a54d5904d9febf8508f65fb8552499a1abc7d1078c3a \
-    crate://crates.io/serde_derive/1.0.210;sha256sum=243902eda00fad750862fc144cea25caca5e20d615af0a81bee94ca738f1df1f;serde_derive-1.0.210.sha256sum=243902eda00fad750862fc144cea25caca5e20d615af0a81bee94ca738f1df1f \
-    crate://crates.io/serde_json/1.0.128;sha256sum=6ff5456707a1de34e7e37f2a6fd3d3f808c318259cbd01ab6377795054b483d8;serde_json-1.0.128.sha256sum=6ff5456707a1de34e7e37f2a6fd3d3f808c318259cbd01ab6377795054b483d8 \
+    crate://crates.io/serde/1.0.213;sha256sum=3ea7893ff5e2466df8d720bb615088341b295f849602c6956047f8f80f0e9bc1;serde-1.0.213.sha256sum=3ea7893ff5e2466df8d720bb615088341b295f849602c6956047f8f80f0e9bc1 \
+    crate://crates.io/serde_derive/1.0.213;sha256sum=7e85ad2009c50b58e87caa8cd6dac16bdf511bbfb7af6c33df902396aa480fa5;serde_derive-1.0.213.sha256sum=7e85ad2009c50b58e87caa8cd6dac16bdf511bbfb7af6c33df902396aa480fa5 \
+    crate://crates.io/serde_json/1.0.132;sha256sum=d726bfaff4b320266d395898905d0eba0345aae23b54aee3a737e260fd46db03;serde_json-1.0.132.sha256sum=d726bfaff4b320266d395898905d0eba0345aae23b54aee3a737e260fd46db03 \
     crate://crates.io/serde_path_to_error/0.1.16;sha256sum=af99884400da37c88f5e9146b7f1fd0fbcae8f6eec4e9da38b67d05486f814a6;serde_path_to_error-0.1.16.sha256sum=af99884400da37c88f5e9146b7f1fd0fbcae8f6eec4e9da38b67d05486f814a6 \
     crate://crates.io/serde_spanned/0.6.8;sha256sum=87607cb1398ed59d48732e575a4c28a7a8ebf2454b964fe3f224f2afc07909e1;serde_spanned-0.6.8.sha256sum=87607cb1398ed59d48732e575a4c28a7a8ebf2454b964fe3f224f2afc07909e1 \
     crate://crates.io/serde_urlencoded/0.7.1;sha256sum=d3491c14715ca2294c4d6a88f15e84739788c1d030eed8c110436aafdaa2f3fd;serde_urlencoded-0.7.1.sha256sum=d3491c14715ca2294c4d6a88f15e84739788c1d030eed8c110436aafdaa2f3fd \
@@ -309,7 +310,7 @@ SRC_URI += " \
     crate://crates.io/symphonia-utils-xiph/0.5.4;sha256sum=484472580fa49991afda5f6550ece662237b00c6f562c7d9638d1b086ed010fe;symphonia-utils-xiph-0.5.4.sha256sum=484472580fa49991afda5f6550ece662237b00c6f562c7d9638d1b086ed010fe \
     crate://crates.io/symphonia/0.5.4;sha256sum=815c942ae7ee74737bb00f965fa5b5a2ac2ce7b6c01c0cc169bbeaf7abd5f5a9;symphonia-0.5.4.sha256sum=815c942ae7ee74737bb00f965fa5b5a2ac2ce7b6c01c0cc169bbeaf7abd5f5a9 \
     crate://crates.io/syn/1.0.109;sha256sum=72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237;syn-1.0.109.sha256sum=72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237 \
-    crate://crates.io/syn/2.0.79;sha256sum=89132cd0bf050864e1d38dc3bbc07a0eb8e7530af26344d3d2bbbef83499f590;syn-2.0.79.sha256sum=89132cd0bf050864e1d38dc3bbc07a0eb8e7530af26344d3d2bbbef83499f590 \
+    crate://crates.io/syn/2.0.85;sha256sum=5023162dfcd14ef8f32034d8bcd4cc5ddc61ef7a247c024a33e24e1f24d21b56;syn-2.0.85.sha256sum=5023162dfcd14ef8f32034d8bcd4cc5ddc61ef7a247c024a33e24e1f24d21b56 \
     crate://crates.io/sync_wrapper/0.1.2;sha256sum=2047c6ded9c721764247e62cd3b03c09ffc529b2ba5b10ec482ae507a4a70160;sync_wrapper-0.1.2.sha256sum=2047c6ded9c721764247e62cd3b03c09ffc529b2ba5b10ec482ae507a4a70160 \
     crate://crates.io/sysinfo/0.31.4;sha256sum=355dbe4f8799b304b05e1b0f05fc59b2a18d36645cf169607da45bde2f69a1be;sysinfo-0.31.4.sha256sum=355dbe4f8799b304b05e1b0f05fc59b2a18d36645cf169607da45bde2f69a1be \
     crate://crates.io/system-configuration-sys/0.5.0;sha256sum=a75fb188eb626b924683e3b95e3a48e63551fcfb51949de2f06a9d91dbee93c9;system-configuration-sys-0.5.0.sha256sum=a75fb188eb626b924683e3b95e3a48e63551fcfb51949de2f06a9d91dbee93c9 \
@@ -317,8 +318,8 @@ SRC_URI += " \
     crate://crates.io/system-deps/7.0.3;sha256sum=66d23aaf9f331227789a99e8de4c91bf46703add012bdfd45fdecdfb2975a005;system-deps-7.0.3.sha256sum=66d23aaf9f331227789a99e8de4c91bf46703add012bdfd45fdecdfb2975a005 \
     crate://crates.io/target-lexicon/0.12.16;sha256sum=61c41af27dd6d1e27b1b16b489db798443478cef1f06a660c96db617ba5de3b1;target-lexicon-0.12.16.sha256sum=61c41af27dd6d1e27b1b16b489db798443478cef1f06a660c96db617ba5de3b1 \
     crate://crates.io/tempfile/3.13.0;sha256sum=f0f2c9fc62d0beef6951ccffd757e241266a2c833136efbe35af6cd2567dca5b;tempfile-3.13.0.sha256sum=f0f2c9fc62d0beef6951ccffd757e241266a2c833136efbe35af6cd2567dca5b \
-    crate://crates.io/thiserror-impl/1.0.64;sha256sum=08904e7672f5eb876eaaf87e0ce17857500934f4981c4a0ab2b4aa98baac7fc3;thiserror-impl-1.0.64.sha256sum=08904e7672f5eb876eaaf87e0ce17857500934f4981c4a0ab2b4aa98baac7fc3 \
-    crate://crates.io/thiserror/1.0.64;sha256sum=d50af8abc119fb8bb6dbabcfa89656f46f84aa0ac7688088608076ad2b459a84;thiserror-1.0.64.sha256sum=d50af8abc119fb8bb6dbabcfa89656f46f84aa0ac7688088608076ad2b459a84 \
+    crate://crates.io/thiserror-impl/1.0.65;sha256sum=ae71770322cbd277e69d762a16c444af02aa0575ac0d174f0b9562d3b37f8602;thiserror-impl-1.0.65.sha256sum=ae71770322cbd277e69d762a16c444af02aa0575ac0d174f0b9562d3b37f8602 \
+    crate://crates.io/thiserror/1.0.65;sha256sum=5d11abd9594d9b38965ef50805c5e469ca9cc6f197f883f717e0269a3057b3d5;thiserror-1.0.65.sha256sum=5d11abd9594d9b38965ef50805c5e469ca9cc6f197f883f717e0269a3057b3d5 \
     crate://crates.io/thread-id/4.2.2;sha256sum=cfe8f25bbdd100db7e1d34acf7fd2dc59c4bf8f7483f505eaa7d4f12f76cc0ea;thread-id-4.2.2.sha256sum=cfe8f25bbdd100db7e1d34acf7fd2dc59c4bf8f7483f505eaa7d4f12f76cc0ea \
     crate://crates.io/time-core/0.1.2;sha256sum=ef927ca75afb808a4d64dd374f00a2adf8d0fcff8e7b184af886c3c87ec4a3f3;time-core-0.1.2.sha256sum=ef927ca75afb808a4d64dd374f00a2adf8d0fcff8e7b184af886c3c87ec4a3f3 \
     crate://crates.io/time-macros/0.2.18;sha256sum=3f252a68540fde3a3877aeea552b832b40ab9a69e318efd078774a01ddee1ccf;time-macros-0.2.18.sha256sum=3f252a68540fde3a3877aeea552b832b40ab9a69e318efd078774a01ddee1ccf \
@@ -332,7 +333,7 @@ SRC_URI += " \
     crate://crates.io/tokio-stream/0.1.16;sha256sum=4f4e6ce100d0eb49a2734f8c0812bcd324cf357d21810932c5df6b96ef2b86f1;tokio-stream-0.1.16.sha256sum=4f4e6ce100d0eb49a2734f8c0812bcd324cf357d21810932c5df6b96ef2b86f1 \
     crate://crates.io/tokio-tungstenite/0.24.0;sha256sum=edc5f74e248dc973e0dbb7b74c7e0d6fcc301c694ff50049504004ef4d0cdcd9;tokio-tungstenite-0.24.0.sha256sum=edc5f74e248dc973e0dbb7b74c7e0d6fcc301c694ff50049504004ef4d0cdcd9 \
     crate://crates.io/tokio-util/0.7.12;sha256sum=61e7c3654c13bcd040d4a03abee2c75b1d14a37b423cf5a813ceae1cc903ec6a;tokio-util-0.7.12.sha256sum=61e7c3654c13bcd040d4a03abee2c75b1d14a37b423cf5a813ceae1cc903ec6a \
-    crate://crates.io/tokio/1.40.0;sha256sum=e2b070231665d27ad9ec9b8df639893f46727666c6767db40317fbe920a5d998;tokio-1.40.0.sha256sum=e2b070231665d27ad9ec9b8df639893f46727666c6767db40317fbe920a5d998 \
+    crate://crates.io/tokio/1.41.0;sha256sum=145f3413504347a2be84393cc8a7d2fb4d863b375909ea59f2158261aa258bbb;tokio-1.41.0.sha256sum=145f3413504347a2be84393cc8a7d2fb4d863b375909ea59f2158261aa258bbb \
     crate://crates.io/toml/0.8.19;sha256sum=a1ed1f98e3fdc28d6d910e6737ae6ab1a93bf1985935a1193e68f93eeb68d24e;toml-0.8.19.sha256sum=a1ed1f98e3fdc28d6d910e6737ae6ab1a93bf1985935a1193e68f93eeb68d24e \
     crate://crates.io/toml_datetime/0.6.8;sha256sum=0dd7358ecb8fc2f8d014bf86f6f638ce72ba252a2c3a2572f2a795f1d23efb41;toml_datetime-0.6.8.sha256sum=0dd7358ecb8fc2f8d014bf86f6f638ce72ba252a2c3a2572f2a795f1d23efb41 \
     crate://crates.io/toml_edit/0.22.22;sha256sum=4ae48d6208a266e853d946088ed816055e556cc6028c5e8e2b84d9fa5dd7c7f5;toml_edit-0.22.22.sha256sum=4ae48d6208a266e853d946088ed816055e556cc6028c5e8e2b84d9fa5dd7c7f5 \
@@ -346,11 +347,12 @@ SRC_URI += " \
     crate://crates.io/unicode-ident/1.0.13;sha256sum=e91b56cd4cadaeb79bbf1a5645f6b4f8dc5bde8834ad5894a8db35fda9efa1fe;unicode-ident-1.0.13.sha256sum=e91b56cd4cadaeb79bbf1a5645f6b4f8dc5bde8834ad5894a8db35fda9efa1fe \
     crate://crates.io/unicode-normalization/0.1.24;sha256sum=5033c97c4262335cded6d6fc3e5c18ab755e1a3dc96376350f3d8e9f009ad956;unicode-normalization-0.1.24.sha256sum=5033c97c4262335cded6d6fc3e5c18ab755e1a3dc96376350f3d8e9f009ad956 \
     crate://crates.io/unicode-width/0.1.14;sha256sum=7dd6e30e90baa6f72411720665d41d89b9a3d039dc45b8faea1ddd07f617f6af;unicode-width-0.1.14.sha256sum=7dd6e30e90baa6f72411720665d41d89b9a3d039dc45b8faea1ddd07f617f6af \
+    crate://crates.io/untrusted/0.7.1;sha256sum=a156c684c91ea7d62626509bce3cb4e1d9ed5c4d978f7b4352658f96a4c26b4a;untrusted-0.7.1.sha256sum=a156c684c91ea7d62626509bce3cb4e1d9ed5c4d978f7b4352658f96a4c26b4a \
     crate://crates.io/untrusted/0.9.0;sha256sum=8ecb6da28b8a351d773b68d5825ac39017e680750f980f3a1a85cd8dd28a47c1;untrusted-0.9.0.sha256sum=8ecb6da28b8a351d773b68d5825ac39017e680750f980f3a1a85cd8dd28a47c1 \
     crate://crates.io/url/2.5.2;sha256sum=22784dbdf76fdde8af1aeda5622b546b422b6fc585325248a2bf9f5e41e94d6c;url-2.5.2.sha256sum=22784dbdf76fdde8af1aeda5622b546b422b6fc585325248a2bf9f5e41e94d6c \
     crate://crates.io/utf-8/0.7.6;sha256sum=09cc8ee72d2a9becf2f2febe0205bbed8fc6615b7cb429ad062dc7b7ddd036a9;utf-8-0.7.6.sha256sum=09cc8ee72d2a9becf2f2febe0205bbed8fc6615b7cb429ad062dc7b7ddd036a9 \
     crate://crates.io/utf8parse/0.2.2;sha256sum=06abde3611657adf66d383f00b093d7faecc7fa57071cce2578660c9f1010821;utf8parse-0.2.2.sha256sum=06abde3611657adf66d383f00b093d7faecc7fa57071cce2578660c9f1010821 \
-    crate://crates.io/uuid/1.10.0;sha256sum=81dfa00651efa65069b0b6b651f4aaa31ba9e3c3ce0137aaad053604ee7e0314;uuid-1.10.0.sha256sum=81dfa00651efa65069b0b6b651f4aaa31ba9e3c3ce0137aaad053604ee7e0314 \
+    crate://crates.io/uuid/1.11.0;sha256sum=f8c5f0a0af699448548ad1a2fbf920fb4bee257eae39953ba95cb84891a0446a;uuid-1.11.0.sha256sum=f8c5f0a0af699448548ad1a2fbf920fb4bee257eae39953ba95cb84891a0446a \
     crate://crates.io/vergen-gitcl/1.0.1;sha256sum=2a3a7f91caabecefc3c249fd864b11d4abe315c166fbdb568964421bccfd2b7a;vergen-gitcl-1.0.1.sha256sum=2a3a7f91caabecefc3c249fd864b11d4abe315c166fbdb568964421bccfd2b7a \
     crate://crates.io/vergen-lib/0.1.4;sha256sum=229eaddb0050920816cf051e619affaf18caa3dd512de8de5839ccbc8e53abb0;vergen-lib-0.1.4.sha256sum=229eaddb0050920816cf051e619affaf18caa3dd512de8de5839ccbc8e53abb0 \
     crate://crates.io/vergen/9.0.1;sha256sum=349ed9e45296a581f455bc18039878f409992999bc1d5da12a6800eb18c8752f;vergen-9.0.1.sha256sum=349ed9e45296a581f455bc18039878f409992999bc1d5da12a6800eb18c8752f \
