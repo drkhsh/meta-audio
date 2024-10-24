@@ -8,10 +8,9 @@ inherit cargo
 # how to get librespot could be as easy as but default to a git checkout:
 # SRC_URI += "crate://crates.io/librespot/0.5.0"
 SRC_URI += "git://github.com/librespot-org/librespot/;protocol=https;nobranch=1"
-SRCREV = "6639bdedbbccfa1b3b91f051084691bcd8d401e7"
+SRCREV = "84d28e887b0c9b8e07dcbf890a17cdfe7f3cd8d1"
 S = "${WORKDIR}/git"
 CARGO_SRC_DIR = ""
-PV:append = ".AUTOINC+6639bdedbb"
 
 # please note if you have entries that do not begin with crate://
 # you must change them to how that package can be fetched
