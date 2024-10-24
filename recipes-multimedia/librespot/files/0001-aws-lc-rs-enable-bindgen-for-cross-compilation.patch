@@ -1,4 +1,4 @@
-From a058215ec49fc5d53660eb58357b41712318758a Mon Sep 17 00:00:00 2001
+From 8737c2a44fab26a98d97b6e6ce4b3187777b0685 Mon Sep 17 00:00:00 2001
 From: drkhsh <drkhsh@escpe.net>
 Date: Thu, 26 Sep 2024 15:32:57 +0200
 Subject: [PATCH 1/2] aws-lc-rs: enable bindgen for cross compilation
@@ -8,17 +8,17 @@ Subject: [PATCH 1/2] aws-lc-rs: enable bindgen for cross compilation
  1 file changed, 1 insertion(+)
 
 diff --git a/Cargo.toml b/Cargo.toml
-index fe2e38c..8ad70c7 100644
+index c62b7bc..b284b35 100644
 --- a/Cargo.toml
 +++ b/Cargo.toml
-@@ -66,6 +66,7 @@ thiserror = "1.0"
+@@ -64,6 +64,7 @@ sysinfo = { version = "0.31.3", default-features = false, features = ["system"]
+ thiserror = "1.0"
  tokio = { version = "1", features = ["rt", "macros", "signal", "sync", "parking_lot", "process"] }
  url = "2.2"
- webpki = "0.22.4"
 +aws-lc-rs = { version = "1", features = ["bindgen"] }
  
  [features]
  alsa-backend = ["librespot-playback/alsa-backend"]
 -- 
-2.45.2
+2.47.0
 
